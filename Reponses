@@ -1,0 +1,56 @@
+cd TP2-Nom-Prenom
+git init
+git status
+echo "# TP2 : Gestion des branches" > README.md
+git add README.md
+git commit -m "Ajout du fichier README.md avec le titre initial"
+git branch -m develop
+git switch develop
+git switch -c feature1
+echo "Ceci est une description du projet" >> README.md
+git add README.md
+git commit -m "Ajout d'une description du projet dans README.md"
+git switch develop
+sed -i '2i\Modification sur develop avant merge de f1.' README.md
+git add README.md
+git commit -m "Ajout d’une phrase avant le merge de feature1"
+git merge feature1
+git add README.md
+git commit -m "Fusion de feature1 dans develop"
+git switch -c feature2
+sed -i '1s/.*/# TP2 - NomPrenom - Gestion des branches/' README.md
+git add README.md
+git commit -m "Modification du titre dans README.md pour feature2"
+git switch develop
+git switch -c feature3
+sed -i '1s/.*/TP2 - Gestion des branches et fusions/' README.md
+git add README.md
+git commit -m "Modification du titre dans README.md pour feature3"
+git switch develop
+git merge feature2
+git merge feature3
+git switch -c feature4
+echo "Cette phrase concerne la partie rebase du TP2." >> README.md
+sed -i 's/Ceci est une description.*/Ceci est une description du projet dans le fichier README.md/' README.md
+git add README.md
+git commit -m "Ajout dans README.md - partie rebase"
+sed -i '$s/$/ (feature4)/' README.md
+git add README.md
+git commit -m "Ajout dans README.md - mention feature4"
+echo "Fin des modifications de la feature f4" >> README.md
+git add README.md
+git commit -m "Ajout dans README.md - dernière ligne feature4"
+git log --oneline
+git rebase -i HEAD~2
+git switch develop
+sed -i '1s/.*/ TP2 - Branches, merge et rebase - NomPrenom/' README.md
+git add README.md
+git commit -m "Mise à jour du titre README.md pour develop"
+git push -u origin develop
+git rebase feature4
+git add README.md
+git rebase --continue
+git push -f origin develop
+git add reponses.txt
+git commit -m "Ajout du fichier de réponses du TP"
+git push
