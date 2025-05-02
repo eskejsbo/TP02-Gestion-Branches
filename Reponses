@@ -54,3 +54,7 @@ git push -f origin develop
 git add reponses.txt
 git commit -m "Ajout du fichier de réponses du TP"
 git push
+
+7. La commande git merge permet de fusionner les modifications de deux branches tout en gardant l’historique des deux.
+
+8. La commande git rebase permet de déplacer les commits d’une branche pour les appliquer sur une autre, en changeant l'ordre des commits.
