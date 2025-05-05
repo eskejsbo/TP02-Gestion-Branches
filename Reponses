@@ -71,6 +71,6 @@ Rebase
 
 7. La commande git merge permet de fusionner les modifications de deux branches tout en gardant l’historique des deux.
 
-8. La commande git rebase permet de déplacer les commits d’une branche pour les appliquer sur une autre, en changeant l'ordre des commits. Elle est utile ici pour rendre l’historique plus linéaire et plus clair.
+8. La commande git rebase permet de déplacer les commits d’une branche pour les appliquer sur une autre, en changeant l'ordre des commits
 
 9. git push -f origin develop
